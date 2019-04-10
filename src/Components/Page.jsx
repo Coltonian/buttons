@@ -11,14 +11,8 @@ export class Page extends React.Component {
         };
     }
 
-    handleClick() {
-        this.setState({
-            title: "I was clicked"
-        })
-    }
-
-    changeTitle(title) {
-        this.setState({title});
+    changeTitle() {
+        this.setState({title:"I've been clicked"});
     }
 
     render() {
@@ -26,10 +20,8 @@ export class Page extends React.Component {
             <div>
                 <Button 
                     title={this.state.title}
-                    onClick={() => this.state.handleClick()}/>
-                <Input
-                    onChange={() => this.state.changeTitle}
-                />
+                    changeTitle={this.changeTitle.bind(this)}/>
+                <Input />
             </div>
         );
     }

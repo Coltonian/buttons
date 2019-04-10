@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 
 export class Button extends React.Component {
     handleClick() {
-        this.props.onClick();
+        this.props.changeTitle();
     }
     
     render() {
         return(
             <button 
-                onClick={this.handleClick}>
-                {this.props.title}</button>
+                onClick={this.handleClick.bind(this)}>
+                {this.props.title}
+            </button>
         );
     }
 }
