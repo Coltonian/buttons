@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from './Button';
+import { Input } from './Input';
 
 export class Page extends React.Component {
     constructor(props) {
@@ -10,17 +11,26 @@ export class Page extends React.Component {
         };
     }
 
-    handleClick = () => {
+    handleClick() {
         this.setState({
             title: "I was clicked"
         })
     }
 
+    changeTitle(title) {
+        this.setState({title});
+    }
+
     render() {
         return(
-            <Button 
-                title={this.state.title}
-                onClick={() => this.state.handleClick}/>
+            <div>
+                <Button 
+                    title={this.state.title}
+                    onClick={() => this.state.handleClick()}/>
+                <Input
+                    onChange={() => this.state.changeTitle}
+                />
+            </div>
         );
     }
 }
