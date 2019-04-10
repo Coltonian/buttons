@@ -15,13 +15,17 @@ export class Page extends React.Component {
         this.setState({title:"I've been clicked"});
     }
 
+    inputTitle(title) {
+        this.setState({title: title});
+    }
+
     render() {
         return(
             <div>
                 <Button 
                     title={this.state.title}
                     changeTitle={this.changeTitle.bind(this)}/>
-                <Input />
+                <Input inputTitle={this.inputTitle.bind(this)} />
             </div>
         );
     }
