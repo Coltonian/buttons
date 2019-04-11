@@ -9,6 +9,10 @@ export class Page extends React.Component {
         this.state = {
             title: "Click Me!"
         };
+        
+        //bindings
+        this.changeTitle = this.changeTitle.bind(this);
+        this.inputTitle = this.inputTitle.bind(this);
     }
 
     changeTitle() {
@@ -24,8 +28,8 @@ export class Page extends React.Component {
             <div>
                 <Button 
                     title={this.state.title}
-                    changeTitle={this.changeTitle.bind(this)}/>
-                <Input inputTitle={this.inputTitle.bind(this)} />
+                    changeTitle={this.changeTitle}/>
+                <Input inputTitle={this.inputTitle} />
             </div>
         );
     }
